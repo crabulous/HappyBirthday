@@ -9,7 +9,7 @@ async def create_wish_and_picture(request: Request):
     req = await request.json()
     names = req["names"]
     result = {"text": [], "picture": []}
+    result["picture"].append(deepai())
     for name in names:
         result["text"].append(create_wish(name))
-        result["picture"].append(deepai())
     return result
